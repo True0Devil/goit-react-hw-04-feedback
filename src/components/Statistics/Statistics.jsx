@@ -1,5 +1,6 @@
 import { Notification } from 'components/Notification/Notification';
 import { List, Item } from './Statistics.styled';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({ options, total, percentage }) => {
   const list = [];
@@ -15,16 +16,18 @@ export const Statistics = ({ options, total, percentage }) => {
       {total ? (
         <List>
           {list}
-          <li>
-            Total: <b>{total}</b>
-          </li>
-          <li>
-            Positive feedback: <b>{percentage}%</b>
-          </li>
+          <li>Total: {total}</li>
+          <li>Positive feedback: {percentage}%</li>
         </List>
       ) : (
         <Notification message={'There is no feedback yet'} />
       )}
     </>
   );
+};
+
+Statistics.propTypes = {
+  options: PropTypes.object.isRequired,
+  total: PropTypes.number.isRequired,
+  percentage: PropTypes.number.isRequired,
 };

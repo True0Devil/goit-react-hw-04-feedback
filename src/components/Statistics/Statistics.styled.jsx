@@ -11,7 +11,7 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  color: ${props => handleItemColor(props.name)}; 
+  color: ${props => handleItemColor(props.name)};
 `;
 
 const handleItemColor = name => {
@@ -22,5 +22,8 @@ const handleItemColor = name => {
       return 'grey';
     case 'bad':
       return 'red';
+
+    default:
+      return 'black';
   }
 };

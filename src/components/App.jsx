@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Section } from './common/Section/Section';
-import { FeedbackOptions } from './Feedback/FeedbackOptins';
+import { FeedbackOptions } from './Feedback/FeedbackOptions';
 import { Statistics } from 'components/Statistics/Statistics';
 
 export class App extends Component {

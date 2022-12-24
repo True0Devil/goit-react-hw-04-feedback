@@ -1,4 +1,5 @@
-import { Button } from "./FeedbackOptions.styled";
+import { Button } from './FeedbackOptions.styled';
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onClick }) => {
   return (
@@ -10,4 +11,9 @@ export const FeedbackOptions = ({ options, onClick }) => {
       ))}
     </>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

@@ -14,7 +14,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: ${props => handleColor(props.name)}
+    background-color: ${props => handleColor(props.name)};
   }
 
   :not(:last-child) {
@@ -30,5 +30,8 @@ const handleColor = name => {
       return 'grey';
     case 'bad':
       return 'red';
+
+    default:
+      return 'black';
   }
 };
