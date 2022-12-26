@@ -2,20 +2,23 @@ import { Notification } from 'components/Notification/Notification';
 import { List, Item } from './Statistics.styled';
 import PropTypes from 'prop-types';
 
-export const Statistics = ({ options, total, percentage }) => {
-  const list = [];
-  for (const key in options) {
-    list.push(
-      <Item key={key} name={key}>
-        {key}: {options[key]}
-      </Item>
-    );
-  }
+export const Statistics = ({ good, neutral, bad, total, percentage }) => {
+  const stats = [
+    { count: good, title: 'Good' },
+    { count: neutral, title: 'Neutral' },
+    { count: bad, title: 'Bad' },
+  ];
+
+  console.log(stats);
   return (
     <>
       {total ? (
         <List>
-          {list}
+          {stats.map(stat => (
+            <Item key={stat.title} name={stat.title}>
+              {stat.title}: {stat.count}
+            </Item>
+          ))}
           <li>Total: {total}</li>
           <li>Positive feedback: {percentage}%</li>
         </List>
@@ -27,7 +30,9 @@ export const Statistics = ({ options, total, percentage }) => {
 };
 
 Statistics.propTypes = {
-  options: PropTypes.object.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
   percentage: PropTypes.number.isRequired,
 };

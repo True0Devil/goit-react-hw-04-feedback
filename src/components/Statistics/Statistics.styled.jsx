@@ -16,11 +16,11 @@ export const Item = styled.li`
 
 const handleItemColor = name => {
   switch (name) {
-    case 'good':
+    case 'Good':
       return 'green';
-    case 'neutral':
+    case 'Neutral':
       return 'grey';
-    case 'bad':
+    case 'Bad':
       return 'red';
 
     default:
