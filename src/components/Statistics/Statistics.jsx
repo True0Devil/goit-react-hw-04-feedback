@@ -9,7 +9,6 @@ export const Statistics = ({ good, neutral, bad, total, percentage }) => {
     { count: bad, title: 'Bad' },
   ];
 
-  console.log(stats);
   return (
     <>
       {total ? (
